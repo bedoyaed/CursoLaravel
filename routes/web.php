@@ -47,7 +47,7 @@ Route::get('/cursos/{curso}', function($curso) {
     return "Bienvenido al curso: $curso";
 });
 
-
+/*
 Route::get('/cursos/{curso}/{category}', function($curso, $category){
     return "Bienvenido al curso: $curso de la categoria: $category";
 
@@ -66,8 +66,10 @@ Route::get('/cursos/{curso}/{category?}', function($curso, $category = null){
 
 });
 
+*/
+
 //para proteger los datos que se ingresan con expresiones regulares
 
 Route::get('/cursos/{curso}/{category}', function($curso, $category){
     return "Bienvenido al curso: $curso de la categoria: $category";
-})->where ('cursos', '[a-zA-Z]+');
+})->where ('curso', '[a-zA-Z]+');
