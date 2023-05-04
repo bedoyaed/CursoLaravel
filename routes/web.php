@@ -73,3 +73,10 @@ Route::get('/cursos/{curso}/{category?}', function($curso, $category = null){
 Route::get('/cursos/{curso}/{category}', function($curso, $category){
     return "Bienvenido al curso: $curso de la categoria: $category";
 })->where ('curso', '[a-zA-Z]+');
+
+
+Route::get('/cursos/{curso}/{category}', function($curso, $category){
+    return "Bienvenido al curso: $curso de la categoria: $category";
+})->whereAlpha ('curso');
+
+
