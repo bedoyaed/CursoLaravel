@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+/*
 
 Route::get('/', function () {
     return "Hola desde la pagina de inicio de danny";
@@ -46,6 +47,7 @@ Route::get('/cursos/informacion', function() {
 Route::get('/cursos/{curso}', function($curso) {
     return "Bienvenido al curso: $curso";
 });
+*/
 
 /*
 Route::get('/cursos/{curso}/{category}', function($curso, $category){
@@ -69,14 +71,30 @@ Route::get('/cursos/{curso}/{category?}', function($curso, $category = null){
 */
 
 //para proteger los datos que se ingresan con expresiones regulares
-
+/*
 Route::get('/cursos/{curso}/{category}', function($curso, $category){
     return "Bienvenido al curso: $curso de la categoria: $category";
 })->where ('curso', '[a-zA-Z]+');
+*/
+// este solo para letras
+/*
+Route::get('/cursos/{curso}/{category}', function($curso, $category){
+    return "Bienvenido al curso: $curso de la categoria: $category";
+})->whereAlpha ('curso');
+
+*/
 
 
+// este es para letras y numeros excluye los caracteres especiales
+/*
 Route::get('/cursos/{curso}/{category}', function($curso, $category){
     return "Bienvenido al curso: $curso de la categoria: $category";
 })->whereAlphaNumeric ('curso');
+*/
 
+// con id en las rutas
 
+Route::get('/cursos/{id}', function($id){
+    return "Bienvenidos al curso con id: $id";
+
+});
